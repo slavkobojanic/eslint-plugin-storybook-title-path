@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "extends": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "storybook-title-path"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-constant-condition": "error",
+    "@typescript-eslint/strict-boolean-expressions": [
+      2,
+      {
+        "allowString": false,
+        "allowNumber": false
+      }
+    ],
+    "storybook-title-path/storybook-title-path": "error"
+  },
+  "ignorePatterns": [
+    "src/**/*.test.ts",
+    "src/frontend/generated/*"
+  ]
+}
