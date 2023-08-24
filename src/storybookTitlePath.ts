@@ -33,8 +33,6 @@ export function storybookTitlePathRule(
         return;
       }
 
-      console.log('2');
-
       if (titleProperty.type !== 'Property') {
         context.report({
           node: titleProperty,
@@ -44,11 +42,8 @@ export function storybookTitlePathRule(
         return;
       }
 
-      console.log('3');
-
       // to determine the correct `title`, we need to know the current path
       let fullPath = context.getPhysicalFilename().split('/');
-      console.log(fullPath);
 
       // keep removing leading element til we get to views, as engineers may
       // have the repo placed in very different directories, however, we know
@@ -72,8 +67,6 @@ export function storybookTitlePathRule(
         return;
       }
 
-      console.log('4');
-
       if (titleProperty.value.value !== expectedStoryPath) {
         context.report({
           node: titleProperty,
@@ -84,8 +77,6 @@ export function storybookTitlePathRule(
         });
         return;
       }
-
-      console.log('5');
     },
   };
 }
